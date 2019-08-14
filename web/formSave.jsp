@@ -1,6 +1,7 @@
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 <%@page import="java.sql.*" %>
+<%@page import="persistence.*" %>
 <%--
 The taglib directive below imports the JSTL library. If you uncomment it,
 you must also add the JSTL library to the project. The Add Library... action
@@ -23,10 +24,8 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
         <h1>JSP Page</h1>
         <%
         
-        Class.forName("com.mysql.jdbc.Driver");
-        Connection conn =
-                DriverManager.getConnection("jdbc:mysql://172.18.10.31/201576044", "201576044", "201576044");
-        Statement st = conn.createStatement();
+        ContatoDAO acessaContato = null;
+        acessaContato = ContatoDAO.getInstance();
         
         String nome = request.getParameter("textNome");
         String email = request.getParameter("textEmail");
@@ -36,20 +35,8 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
            <p>Nome e email sao dados obrigatorios...</p>
         <% 
         } else {
-            try {
-                st.execute("insert into contato (nome, email)" +
-                        " values ('" + nome + "', '" + email + "')");
-            } catch(SQLException e) {
-                throw e;
-            } finally {
-                try {
-                    if(st!=null) st.close();
-                    if(conn!=null) conn.close();
-                    
-                } catch(SQLException e) {
-                    
-                }
-            }
+            acessaContato.save(nome, email);
+            
         %>
            <p>Contato gravado com sucesso!</p>
         <%  
