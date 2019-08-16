@@ -11,9 +11,12 @@ import java.sql.Statement;
 
 /**
  *
- * @author ice
+ * @author joaopsjc
  */
 public class ContatoDAO {
+/**
+ * DAO = data access object
+ */
     private static ContatoDAO instance = new ContatoDAO();
     public static ContatoDAO getInstance()
     {
