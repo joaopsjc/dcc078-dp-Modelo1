@@ -8,6 +8,7 @@ package persistence;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import model.Contato;
 
 /**
  *
@@ -23,7 +24,7 @@ public class ContatoDAO {
         return instance;
     }
     
-    public void save(String nome, String email) throws SQLException,ClassNotFoundException
+    public void save(Contato contato) throws SQLException,ClassNotFoundException
     {
         Connection conn = null;
         Statement st = null;
@@ -31,7 +32,7 @@ public class ContatoDAO {
             conn = DatabaseLocator.getInstance().getConnection();
             st = conn.createStatement();
             st.execute("insert into contato (nome, email)" +
-                       " values ('" + nome + "', '" + email + "')");
+                       " values ('" + contato.getNome() + "', '" + contato.getEmail() + "')");
         } catch (SQLException e) {
             throw e;
         } 
