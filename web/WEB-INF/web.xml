@@ -4,10 +4,10 @@
         <servlet-name>ContatoController</servlet-name>
         <servlet-class>controller.ContatoController</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>ContatoController</servlet-name>
-        <url-pattern>/ContatoController</url-pattern>
-    </servlet-mapping>
+    <servlet>
+        <servlet-name>FrontController</servlet-name>
+        <servlet-class>controller.FrontController</servlet-class>
+    </servlet>
     <session-config>
         <session-timeout>
             30
