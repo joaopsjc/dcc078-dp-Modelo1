@@ -7,8 +7,11 @@ package action;
 
 import controller.Action;
 import java.io.IOException;
+import java.sql.SQLException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Contato;
+import persistence.ContatoDAO;
 
 /**
  *
@@ -17,6 +20,25 @@ import javax.servlet.http.HttpServletResponse;
 public class ApagarContatoAction implements Action{
     public void execute (HttpServletRequest request, HttpServletResponse response) throws IOException, ClassNotFoundException
     {
+        String nome = request.getParameter("textNome");
+        String email = request.getParameter("textEmail");
         
+        if(nome.equals("") || email.equals("")) {
+        
+           response.sendRedirect("ContatoErro.jsp");
+        
+        } else {
+            try{
+                Contato contato = new Contato(nome,email);
+                ContatoDAO.getInstance().delete(contato);
+                response.sendRedirect("ContatoSucesso.jsp");
+            }
+            catch(SQLException ex)
+            {
+                response.sendRedirect("ContatoErro.jsp");
+                ex.printStackTrace();
+            }
+        
+        }
     }
 }
