@@ -31,7 +31,7 @@ public class LerContatoAction implements Action{
             try{
                 Contato contato = new Contato(nome,email);
                 ContatoDAO.getInstance().read(contato);
-                response.sendRedirect("ContatoSucesso.jsp");
+                response.sendRedirect(".jsp");
             }
             catch(SQLException ex)
             {

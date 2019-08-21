@@ -6,6 +6,7 @@
 package persistence;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import model.Contato;
@@ -65,9 +66,10 @@ public class ContatoDAO {
         try {
             conn = DatabaseLocator.getInstance().getConnection();
             st = conn.createStatement();
+            String query = "select email from contato where " +
+                       " contato.nome = '" + contato.getNome() +  "'";
+            ResultSet rs = st.executeQuery(query);
             
-            st.execute("select email from contato where " +
-                       " contato.nome = '" + contato.getNome() +  "'");
         } catch (SQLException e) {
             throw e;
         } 
