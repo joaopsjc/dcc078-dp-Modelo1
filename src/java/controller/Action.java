@@ -16,5 +16,5 @@ import javax.servlet.http.HttpServletResponse;
      * @throws IOException if an I/O error occurs
      */
 public interface Action {
-    public void execute (HttpServletRequest request, HttpServletResponse response) throws IOException;
+    public void execute (HttpServletRequest request, HttpServletResponse response) throws IOException, ClassNotFoundException;
 }
