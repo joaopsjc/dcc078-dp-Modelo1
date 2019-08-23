@@ -21,17 +21,16 @@ public class LerContatoAction implements Action{
     public void execute (HttpServletRequest request, HttpServletResponse response) throws IOException, ClassNotFoundException
     {
         String nome = request.getParameter("textNome");
-        String email = request.getParameter("textEmail");
         
-        if(nome.equals("") || email.equals("")) {
+        if(nome.equals("") || nome == null) {
         
            response.sendRedirect("ContatoErro.jsp");
         
         } else {
             try{
-                Contato contato = new Contato(nome,email);
-                ContatoDAO.getInstance().read(contato);
-                response.sendRedirect(".jsp");
+                Contato contato = null;
+                
+                contato = ContatoDAO.getInstance().read(nome);
             }
             catch(SQLException ex)
             {

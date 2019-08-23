@@ -49,8 +49,7 @@ public class ContatoDAO {
         try {
             conn = DatabaseLocator.getInstance().getConnection();
             st = conn.createStatement();
-            st.execute("DELETE FROM contato WHERE " +
-                       " contato.nome = '" + contato.getNome() +  "' AND " + " contato.email = '" + contato.getEmail() +"'");
+            st.execute("DELETE FROM 'contato' WHERE " + " contato.nome = '" + contato.getNome() +  "' AND " + " contato.email = '" + contato.getEmail() +"'");
         } catch (SQLException e) {
             throw e;
         } 
@@ -59,16 +58,18 @@ public class ContatoDAO {
             closeResources(conn,st);
         }
     }
-    public void read(Contato contato) throws SQLException,ClassNotFoundException
+    public Contato read(String nome) throws SQLException,ClassNotFoundException
     {
         Connection conn = null;
         Statement st = null;
         try {
             conn = DatabaseLocator.getInstance().getConnection();
             st = conn.createStatement();
-            String query = "select email from contato where " +
-                       " contato.nome = '" + contato.getNome() +  "'";
+            String query = "select * from contato where nome = '" + nome;
             ResultSet rs = st.executeQuery(query);
+            rs.first();
+            Contato contato = new Contato(nome, " ");
+            return contato;
             
         } catch (SQLException e) {
             throw e;
