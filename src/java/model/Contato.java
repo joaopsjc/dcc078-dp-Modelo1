@@ -12,7 +12,8 @@ package model;
 public class Contato {
     private String nome;
     private String email;    
-
+    private String nomeEmpresa;
+            
     public Contato() {
     }
 
@@ -20,12 +21,27 @@ public class Contato {
         this.nome = nome;
         this.email = email;
     }
+
+    public Contato(String nome, String email, String nomeEmpresa) {
+        this.nome = nome;
+        this.email = email;
+        this.nomeEmpresa = nomeEmpresa;
+    }
+
+    public void setNomeEmpresa(String nomeEmpresa) {
+        this.nomeEmpresa = nomeEmpresa;
+    }
+    
     public void setNome(String nome) {
         this.nome = nome;
     }
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getNomeEmpresa() {
+        return nomeEmpresa;
     }
 
     public String getNome() {
