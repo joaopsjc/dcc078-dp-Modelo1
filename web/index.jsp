@@ -48,6 +48,16 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
           <input type="submit"/>
         </form>
     </div>
+    <div>
+        <h1>Adicionar Empresa a Contato</h1>
+        <form action="FrontController?action=AdicionarEmpresaContato" method="post">
+          Entre com seu nome
+          <input type="text" name="textNome"/><br/>
+          Entre com nome da empresa
+          <input type="text" name="textEmpresa"/><br/>
+          <input type="submit"/>
+        </form>
+    </div>
     <%--
     This example uses JSTL, uncomment the taglib directive above.
     To test, display the page like this: index.jsp?sayHello=true&name=Murphy
@@ -58,6 +68,31 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
         Hello ${param.name}!
     </c:if>
     --%>
+    <div>
+        <h1>Cadastro de Empresa</h1>
+        <form action="FrontController?action=GravarEmpresa" method="post">
+          Entre com seu nome
+          <input type="text" name="textNome"/><br/>
+          <input type="submit"/>
+        </form>
+    </div>
+    <div>
+        <h1>Deletar Empresa</h1>
+        <form action="FrontController?action=ApagarEmpresa" method="post">
+          Entre com seu nome
+          <input type="text" name="textNome"/><br/>
+          <input type="submit"/>
+        </form>
+    </div><!--
+          sem uso no momento
+    <div>
+        <h1>Visualização de Email do Contato</h1>
+        <form action="FrontController?action=LerEmpresa" method="post">
+          Entre com seu nome
+          <input type="text" name="textNome"/><br/>
+          <input type="submit"/>
+        </form>
+    </div>-->
     
     </body>
 </html>

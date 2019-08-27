@@ -65,7 +65,7 @@ public class ContatoDAO {
         try {
             conn = DatabaseLocator.getInstance().getConnection();
             st = conn.createStatement();
-            String query = "select * from contato where nome = '" + nome;
+            String query = "select * from contato where nome = '" + nome + "'";
             ResultSet rs = st.executeQuery(query);
             rs.first();
             Contato contato = new Contato(nome, " ");
@@ -79,7 +79,22 @@ public class ContatoDAO {
             closeResources(conn,st);
         }
     }
-
+    public void adicionaEmpresa(Contato contato) throws SQLException,ClassNotFoundException
+    {
+        Connection conn = null;
+        Statement st = null;
+        try {
+            conn = DatabaseLocator.getInstance().getConnection();
+            st = conn.createStatement();
+            st.execute("update contato set contato.empresa =" + contato.getNomeEmpresa() +  "where contato.nome = '" + contato.getNome() + "'");
+        } catch (SQLException e) {
+            throw e;
+        } 
+        finally
+        {
+            closeResources(conn,st);
+        }
+    }
     private void closeResources(Connection conn, Statement st) {
         try {
                     if(st!=null) st.close();
