@@ -26,17 +26,17 @@ public class GravarContatoAction implements Action{
         
         if(nome.equals("") || email.equals("")) {
         
-           response.sendRedirect("ContatoErro.jsp");
+           response.sendRedirect("OperacaoErro.jsp");
         
         } else {
             try{
                 Contato contato = new Contato(nome,email);
                 ContatoDAO.getInstance().save(contato);
-                response.sendRedirect("ContatoSucesso.jsp");
+                response.sendRedirect("OperacaoSucesso.jsp");
             }
             catch(SQLException ex)
             {
-                response.sendRedirect("ContatoErro.jsp");
+                response.sendRedirect("OperacaoErro.jsp");
                 ex.printStackTrace();
             }
         

@@ -10,27 +10,28 @@ import java.io.IOException;
 import java.sql.SQLException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Contato;
-import persistence.ContatoDAO;
+import model.Empresa;
+import persistence.EmpresaDAO;
 
 /**
  *
  * @author ice
  */
-public class LerContatoAction implements Action{
-    public void execute (HttpServletRequest request, HttpServletResponse response) throws IOException, ClassNotFoundException
+public class GravarEmpresaAction implements Action{
+    public void execute (HttpServletRequest request, HttpServletResponse response)
+            throws IOException, ClassNotFoundException
     {
         String nome = request.getParameter("textNome");
         
-        if(nome.equals("") || nome == null) {
+        if(nome.equals("")) {
         
            response.sendRedirect("OperacaoErro.jsp");
         
         } else {
             try{
-                Contato contato = null;
-                
-                contato = ContatoDAO.getInstance().read(nome);
+                Empresa empresa = new Empresa(nome);
+                EmpresaDAO.getInstance().save(empresa);
+                response.sendRedirect("OperacaoSucesso.jsp");
             }
             catch(SQLException ex)
             {
