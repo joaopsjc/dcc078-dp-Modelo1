@@ -91,11 +91,11 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
           <input type="submit"/>
         </form>
     </div>
-        <button action="FrontController?action=GravarContatoPagina" method="post">Gravar Contato</button>
-        <button action="FrontController?action=ApagarContatoPagina" method="post">Apagar Contato</button>
-        <button action="FrontController?action=LerContatoPagina" method="post">Ver email</button>
-        <button action="FrontController?action=AdicionarEmpresaContatoPagina" method="post">Adicionar Empresa a contato</button>
-        <button action="FrontController?action=AdicionarEmpresaPagina" method="post">Adicionar Empresa</button>
-        <button action="FrontController?action=ApagarEmpresaPagina" method="post">Apagar Empresa</button>
+    <a action="FrontController?action=GravarContatoPagina"></a>
+    <a action="FrontController?action=ApagarContatoPagina"></a>
+    <a action="FrontController?action=LerContatoPagina"></a>
+    <a action="FrontController?action=AdicionarEmpresaContatoPagina"></a>
+    <a action="FrontController?action=AdicionarEmpresaPagina"></a>
+    <a action="FrontController?action=ApagarEmpresaPagina"></a>
     </body>
 </html>
