@@ -31,7 +31,7 @@ public class AdicionarEmpresaContatoAction implements Action{
         } else {
             try{
                 Contato contato = new Contato(nome,"",empresaNome);
-                ContatoDAO.getInstance().save(contato);
+                ContatoDAO.getInstance().adicionaEmpresa(contato);
                 response.sendRedirect("OperacaoSucesso.jsp");
             }
             catch(SQLException ex)

@@ -28,7 +28,7 @@ public class LerEmpresaAction implements Action{
         
         } else {
             /*
-            não possui uso no momento
+            nao possui uso no momento
             try{
                 Empresa empresa = null;
                 empresa = EmpresaDAO.getInstance().read(nome);
