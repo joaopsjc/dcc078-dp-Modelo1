@@ -20,6 +20,6 @@ import persistence.ContatoDAO;
 public class AdicionarEmpresaContatoPaginaAction implements Action{
     public void execute (HttpServletRequest request, HttpServletResponse response) throws IOException, ClassNotFoundException
     {
-        response.sendRedirect("ApagarEmpresa.jsp");
+        response.sendRedirect("AdicionarEmpresaContato.jsp");
     }
 }

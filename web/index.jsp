@@ -30,7 +30,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
         <form action="FrontController?action=AdicionarEmpresaContatoPagina" method="post">
             <input type="submit" value="Adicionar Empresa a contato"/>
         </form>
-        <form action="FrontController?action=AdicionarEmpresaPagina" method="post">
+        <form action="FrontController?action=GravarEmpresaPagina" method="post">
             <input type="submit" value="Adicionar Empresa"/>
         </form>
         <form action="FrontController?action=ApagarEmpresaPagina" method="post">

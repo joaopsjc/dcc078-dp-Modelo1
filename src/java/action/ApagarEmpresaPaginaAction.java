@@ -20,6 +20,6 @@ import persistence.ContatoDAO;
 public class ApagarEmpresaPaginaAction implements Action{
     public void execute (HttpServletRequest request, HttpServletResponse response) throws IOException, ClassNotFoundException
     {
-        response.sendRedirect("LerContato.jsp");
+        response.sendRedirect("ApagarEmpresa.jsp");
     }
 }
