@@ -20,6 +20,7 @@ public class Contato {
     public Contato(String nome, String email) {
         this.nome = nome;
         this.email = email;
+        this.nomeEmpresa = null;
     }
 
     public Contato(String nome, String email, String nomeEmpresa) {

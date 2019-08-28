@@ -9,6 +9,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import model.Empresa;
 
 /**
@@ -58,18 +60,25 @@ public class EmpresaDAO {
             closeResources(conn,st);
         }
     }
-    public Empresa read(String nome) throws SQLException,ClassNotFoundException
+    public List<Empresa> readAll() throws SQLException,ClassNotFoundException
     {
         Connection conn = null;
         Statement st = null;
         try {
             conn = DatabaseLocator.getInstance().getConnection();
             st = conn.createStatement();
-            String query = "select * from empresa where nome = '" + nome;
+            
+            List<Empresa> empresas = new ArrayList<Empresa>();
+            
+            String query = "select * from empresa";
             ResultSet rs = st.executeQuery(query);
-            rs.first();
-            Empresa contato = new Empresa(nome);
-            return contato;
+            
+            while(rs.next())
+            {
+                Empresa empresa = new Empresa(rs.getString("nome"));
+            }
+            
+            return empresas;
             
         } catch (SQLException e) {
             throw e;
