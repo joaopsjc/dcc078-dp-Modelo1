@@ -6,4 +6,4 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<h1>Contato gravado com sucesso!</h1>
+<h1>Operação realizada com sucesso!</h1>

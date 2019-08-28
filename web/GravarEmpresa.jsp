@@ -69,33 +69,12 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
     </c:if>
     --%>
     <div>
-        <h1>Cadastro de Empresa</h1>
+        <h1>Gravar de Empresa</h1>
         <form action="FrontController?action=GravarEmpresa" method="post">
           Entre com seu nome
           <input type="text" name="textNome"/><br/>
           <input type="submit"/>
         </form>
     </div>
-    <div>
-        <h1>Deletar Empresa</h1>
-        <form action="FrontController?action=ApagarEmpresa" method="post">
-          Entre com seu nome
-          <input type="text" name="textNome"/><br/>
-          <input type="submit"/>
-        </form>
-    </div>
-          
-    <div>
-        <h1>Ler todas as Empresas</h1>
-        <form action="FrontController?action=LerTodasEmpresas" method="post">
-          <input type="submit"/>
-        </form>
-    </div>
-    <a action="FrontController?action=GravarContatoPagina"></a>
-    <a action="FrontController?action=ApagarContatoPagina"></a>
-    <a action="FrontController?action=LerContatoPagina"></a>
-    <a action="FrontController?action=AdicionarEmpresaContatoPagina"></a>
-    <a action="FrontController?action=AdicionarEmpresaPagina"></a>
-    <a action="FrontController?action=ApagarEmpresaPagina"></a>
     </body>
 </html>

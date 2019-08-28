@@ -17,9 +17,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <body>
-
-    
+    <body>    
     <div>
         <h1>Cadastro de Contatos</h1>
         <form action="FrontController?action=GravarContato" method="post">
@@ -30,72 +28,5 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
           <input type="submit"/>
         </form>
     </div>
-    <div>
-        <h1>Deletar Contatos</h1>
-        <form action="FrontController?action=ApagarContato" method="post">
-          Entre com seu nome
-          <input type="text" name="textNome"/><br/>
-          Entre com seu email
-          <input type="text" name="textEmail"/><br/>
-          <input type="submit"/>
-        </form>
-    </div>
-    <div>
-        <h1>Visualização de Email do Contato</h1>
-        <form action="FrontController?action=LerContato" method="post">
-          Entre com seu nome
-          <input type="text" name="textNome"/><br/>
-          <input type="submit"/>
-        </form>
-    </div>
-    <div>
-        <h1>Adicionar Empresa a Contato</h1>
-        <form action="FrontController?action=AdicionarEmpresaContato" method="post">
-          Entre com seu nome
-          <input type="text" name="textNome"/><br/>
-          Entre com nome da empresa
-          <input type="text" name="textEmpresa"/><br/>
-          <input type="submit"/>
-        </form>
-    </div>
-    <%--
-    This example uses JSTL, uncomment the taglib directive above.
-    To test, display the page like this: index.jsp?sayHello=true&name=Murphy
-    --%>
-    <%--
-    <c:if test="${param.sayHello}">
-        <!-- Let's welcome the user ${param.name} -->
-        Hello ${param.name}!
-    </c:if>
-    --%>
-    <div>
-        <h1>Cadastro de Empresa</h1>
-        <form action="FrontController?action=GravarEmpresa" method="post">
-          Entre com seu nome
-          <input type="text" name="textNome"/><br/>
-          <input type="submit"/>
-        </form>
-    </div>
-    <div>
-        <h1>Deletar Empresa</h1>
-        <form action="FrontController?action=ApagarEmpresa" method="post">
-          Entre com seu nome
-          <input type="text" name="textNome"/><br/>
-          <input type="submit"/>
-        </form>
-    </div>
-          
-    <div>
-        <h1>Ler todas as Empresas</h1>
-        <form action="FrontController?action=LerTodasEmpresas" method="post">
-          <input type="submit"/>
-        </form>
-    </div>
-    <a action="FrontController?action=GravarContatoPagina"></a>
-    <a action="FrontController?action=ApagarContatoPagina"></a>
-    <a action="FrontController?action=LerContatoPagina"></a>
-    <a action="FrontController?action=AdicionarEmpresaContatoPagina"></a>
-    <a action="FrontController?action=AdicionarEmpresaPagina"></a>
-    <a action="FrontController?action=ApagarEmpresaPagina"></a>
     </body>
 </html>

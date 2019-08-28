@@ -12,6 +12,13 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+    <div>
+        <h1>Visualização de Email do Contato</h1>
+        <form action="FrontController?action=LerContato" method="post">
+          Entre com seu nome
+          <input type="text" name="textNome"/><br/>
+          <input type="submit"/>
+        </form>
+    </div>
     </body>
 </html>

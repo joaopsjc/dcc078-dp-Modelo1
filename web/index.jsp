@@ -10,7 +10,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
 --%>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-   "http://www.w3.org/TR/html4/loose.dtd">
+    "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
     <head>
@@ -18,84 +18,23 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
         <title>JSP Page</title>
     </head>
     <body>
-
-    
-    <div>
-        <h1>Cadastro de Contatos</h1>
-        <form action="FrontController?action=GravarContato" method="post">
-          Entre com seu nome
-          <input type="text" name="textNome"/><br/>
-          Entre com seu email
-          <input type="text" name="textEmail"/><br/>
-          <input type="submit"/>
+        <form action="FrontController?action=GravarContatoPagina" method="post">
+            <input type="submit" value="Gravar Contato"/>
         </form>
-    </div>
-    <div>
-        <h1>Deletar Contatos</h1>
-        <form action="FrontController?action=ApagarContato" method="post">
-          Entre com seu nome
-          <input type="text" name="textNome"/><br/>
-          Entre com seu email
-          <input type="text" name="textEmail"/><br/>
-          <input type="submit"/>
+        <form action="FrontController?action=ApagarContatoPagina" method="post">
+            <input type="submit" value="Apagar Contato"/>
         </form>
-    </div>
-    <div>
-        <h1>Visualização de Email do Contato</h1>
-        <form action="FrontController?action=LerContato" method="post">
-          Entre com seu nome
-          <input type="text" name="textNome"/><br/>
-          <input type="submit"/>
+        <form action="FrontController?action=LerContatoPagina" method="post">
+            <input type="submit" value="Ver email"/>
         </form>
-    </div>
-    <div>
-        <h1>Adicionar Empresa a Contato</h1>
-        <form action="FrontController?action=AdicionarEmpresaContato" method="post">
-          Entre com seu nome
-          <input type="text" name="textNome"/><br/>
-          Entre com nome da empresa
-          <input type="text" name="textEmpresa"/><br/>
-          <input type="submit"/>
+        <form action="FrontController?action=AdicionarEmpresaContatoPagina" method="post">
+            <input type="submit" value="Adicionar Empresa a contato"/>
         </form>
-    </div>
-    <%--
-    This example uses JSTL, uncomment the taglib directive above.
-    To test, display the page like this: index.jsp?sayHello=true&name=Murphy
-    --%>
-    <%--
-    <c:if test="${param.sayHello}">
-        <!-- Let's welcome the user ${param.name} -->
-        Hello ${param.name}!
-    </c:if>
-    --%>
-    <div>
-        <h1>Cadastro de Empresa</h1>
-        <form action="FrontController?action=GravarEmpresa" method="post">
-          Entre com seu nome
-          <input type="text" name="textNome"/><br/>
-          <input type="submit"/>
+        <form action="FrontController?action=AdicionarEmpresaPagina" method="post">
+            <input type="submit" value="Adicionar Empresa"/>
         </form>
-    </div>
-    <div>
-        <h1>Deletar Empresa</h1>
-        <form action="FrontController?action=ApagarEmpresa" method="post">
-          Entre com seu nome
-          <input type="text" name="textNome"/><br/>
-          <input type="submit"/>
+        <form action="FrontController?action=ApagarEmpresaPagina" method="post">
+            <input type="submit" value="Apagar Empresa"/>
         </form>
-    </div>
-          
-    <div>
-        <h1>Ler todas as Empresas</h1>
-        <form action="FrontController?action=LerTodasEmpresas" method="post">
-          <input type="submit"/>
-        </form>
-    </div>
-        <button action="FrontController?action=GravarContatoPagina" method="post">Gravar Contato</button>
-        <button action="FrontController?action=ApagarContatoPagina" method="post">Apagar Contato</button>
-        <button action="FrontController?action=LerContatoPagina" method="post">Ver email</button>
-        <button action="FrontController?action=AdicionarEmpresaContatoPagina" method="post">Adicionar Empresa a contato</button>
-        <button action="FrontController?action=AdicionarEmpresaPagina" method="post">Adicionar Empresa</button>
-        <button action="FrontController?action=ApagarEmpresaPagina" method="post">Apagar Empresa</button>
     </body>
 </html>
