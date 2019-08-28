@@ -65,10 +65,10 @@ public class ContatoDAO {
         try {
             conn = DatabaseLocator.getInstance().getConnection();
             st = conn.createStatement();
-            String query = "select * from contato where nome = '" + nome + "'";
+            String query = "select * from contato where contato.nome = '" + nome + "';";
             ResultSet rs = st.executeQuery(query);
             rs.first();
-            Contato contato = new Contato(nome, " ");
+            Contato contato = new Contato(nome, rs.getString("email"));
             return contato;
             
         } catch (SQLException e) {
@@ -86,7 +86,9 @@ public class ContatoDAO {
         try {
             conn = DatabaseLocator.getInstance().getConnection();
             st = conn.createStatement();
-            st.execute("UPDATE contato SET contato.id_empresa = '" + contato.getNomeEmpresa() +  "' where contato.nome = '" + contato.getNome() + "';");
+            st.execute("UPDATE contato SET contato.id_empresa = '"
+                    + contato.getNomeEmpresa() +  "' where contato.nome = '"
+                    + contato.getNome() + "';");
         } catch (SQLException e) {
             throw e;
         } 

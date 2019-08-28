@@ -57,7 +57,7 @@ public class EmpresaDAO {
         {
             closeResources(conn,st);
         }
-    }/* sem uso no momento
+    }
     public Empresa read(String nome) throws SQLException,ClassNotFoundException
     {
         Connection conn = null;
@@ -78,7 +78,7 @@ public class EmpresaDAO {
         {
             closeResources(conn,st);
         }
-    }*/
+    }
 
     private void closeResources(Connection conn, Statement st) {
         try {
