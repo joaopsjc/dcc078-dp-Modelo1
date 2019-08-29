@@ -5,6 +5,10 @@
  */
 package model;
 
+import java.sql.SQLException;
+import java.util.List;
+import persistence.ContatoDAO;
+
 /**
  *
  * @author joaopsjc
@@ -52,5 +56,14 @@ public class Contato {
     public String getEmail() {
         return email;
     }
+    public void gravar()
+    {}
+    public void alterar()
+    {}
+    public void excluir()
+    {}
 
+    public static Contato obterCurso(String nome) throws ClassNotFoundException, SQLException {
+        return ContatoDAO.getInstance().read(nome);
+    }
 }

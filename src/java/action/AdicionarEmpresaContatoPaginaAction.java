@@ -8,10 +8,17 @@ package action;
 import controller.Action;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Contato;
+import model.Empresa;
 import persistence.ContatoDAO;
+import persistence.EmpresaDAO;
 
 /**
  *
@@ -20,6 +27,16 @@ import persistence.ContatoDAO;
 public class AdicionarEmpresaContatoPaginaAction implements Action{
     public void execute (HttpServletRequest request, HttpServletResponse response) throws IOException, ClassNotFoundException
     {
-        response.sendRedirect("AdicionarEmpresaContato.jsp");
+
+        try {
+            List<Empresa> empresas = EmpresaDAO.getInstance().readAll();
+            request.setAttribute("empresas", empresas);
+            RequestDispatcher view = request.getRequestDispatcher("AdicionarEmpresaContato.jsp");
+            view.forward(request, response);
+        } catch (ServletException ex) {
+            Logger.getLogger(AdicionarEmpresaContatoPaginaAction.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(AdicionarEmpresaContatoPaginaAction.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

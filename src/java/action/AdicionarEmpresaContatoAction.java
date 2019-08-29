@@ -8,6 +8,7 @@ package action;
 import controller.Action;
 import java.io.IOException;
 import java.sql.SQLException;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Contato;
@@ -30,6 +31,7 @@ public class AdicionarEmpresaContatoAction implements Action{
         
         } else {
             try{
+
                 Contato contato = new Contato(nome,"",empresaNome);
                 ContatoDAO.getInstance().adicionaEmpresa(contato);
                 response.sendRedirect("OperacaoSucesso.jsp");

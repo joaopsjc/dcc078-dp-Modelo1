@@ -5,6 +5,10 @@
  */
 package model;
 
+import java.sql.SQLException;
+import java.util.List;
+import persistence.EmpresaDAO;
+
 /**
  *
  * @author John
@@ -26,5 +30,14 @@ public class Empresa {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    
+    public void gravar()
+    {}
+    public void alterar()
+    {}
+    public void excluir()
+    {}
+
+    public static List<Empresa> obterCursos() throws ClassNotFoundException, SQLException {
+        return EmpresaDAO.getInstance().readAll();
+    }
 }
