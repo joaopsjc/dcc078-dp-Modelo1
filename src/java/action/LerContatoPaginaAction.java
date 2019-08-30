@@ -7,11 +7,8 @@ package action;
 
 import controller.Action;
 import java.io.IOException;
-import java.sql.SQLException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Contato;
-import persistence.ContatoDAO;
 
 /**
  *

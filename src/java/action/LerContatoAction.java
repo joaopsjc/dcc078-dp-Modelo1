@@ -32,12 +32,13 @@ public class LerContatoAction implements Action{
         
         } else {
             try{
+                
                 Contato contato = null;
                 contato = ContatoDAO.getInstance().read(nome);
-          
-                request.setAttribute("contato", contato);
+                request.setAttribute("contato", contato.getEmail());
                 RequestDispatcher view = request.getRequestDispatcher("LerContato.jsp");
                 view.forward(request, response);
+                
             }
             catch(SQLException ex)
             {

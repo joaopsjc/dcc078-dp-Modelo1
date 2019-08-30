@@ -16,16 +16,15 @@
     <body>
     <div>
         <h1>Visualização de Email do Contato</h1>
-        <form action="FrontController?action=LerContato" method="post">
+        <form action="FrontController?action=LerContato&contato=<c:out value="${contato}"/>" method="post">
           Entre com seu nome
           <input type="text" name="textNome"/><br/>
           <input type="submit"/>
         </form>
     </div>
         <div>
-            <c:set var="contato"/>
-            seu e-mail é:
-            <span><c:out value="contato.getEmail()"/></span>
+            seu e-mail é:    
+               <span><c:out value="${contato}"/></span>
         </div>
     </body>
 </html>
